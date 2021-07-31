@@ -80,3 +80,26 @@ return (
         />
         <Footer />
 ```
+-----
+
+displayrepos.js
+```
+const displayRepos = (props) => {
+	let stargazers_total, 
+	forks_total,
+	most_starred, 
+	most_forked;
+	const repos = props.repos;
+	if (!repos) {
+		return null;
+	} else {
+		stargazers_total = repos.reduce( (prev,next) => prev + next.stargazers_count, 0);
+		forks_total = repos.reduce( (prev,next) => prev + next.forks_count, 0);
+		if (stargazers_total > 0) {
+			most_starred = repos.reduce( (prev, next) =>  prev.stargazers_count > next.stargazers_count ? prev : next ); 
+		}
+		if (forks_total > 0) {
+			most_forked = repos.reduce( (prev, next) =>  prev.forks_count > next.forks_count ? prev : next );
+		}
+	}
+  ```
