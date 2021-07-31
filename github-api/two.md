@@ -1,4 +1,6 @@
-'''
+
+  
+```
 const App = () => {
   const githubState = useContext(GithubContext);
   const { searchAllUsers } = githubState;
@@ -7,4 +9,4 @@ const App = () => {
     searchAllUsers();
     // eslint-disable-next-line
   }, []);
-  '''
+```
