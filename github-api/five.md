@@ -81,3 +81,30 @@ export const fetchUserInfo = async (user) => {
   return response;
 };
 ```
+------
+components/users/users.jsx
+```
+const User = () => {
+  const { userInfoValue, loadingValue } = useContext(Context);
+  const [userInfo, setUserInfo] = userInfoValue;
+  const [loading, setLoading] = loadingValue;
+  ```
+-----
+components/repository/repository.jsx
+```
+const Repository = ({ name, description, url, watch, star, forks }) => {
+  const { sizeValue } = useContext(Context);
+  const [size, setSize] = sizeValue;
+
+  function handleNumberFormat(value) {
+    const convertedNumber = value.toString();
+
+    if (value >= 1000 && value < 10000) {
+      return convertedNumber.split("", 2).join(".") + "k";
+    } else if (value >= 10000) {
+      return convertedNumber.split("", 2).join("") + "k";
+    }
+    return value;
+  }
+  ```
+  
