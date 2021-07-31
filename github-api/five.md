@@ -1,4 +1,19 @@
+https://github.com/gcrodrigues/github-repositories-finder
 
+
+api.js
+```
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: "https://api.github.com/users",
+});
+
+export default api;
+```
+-----
+
+index.js
 
 ```
 import api from "./api";
