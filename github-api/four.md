@@ -1,6 +1,8 @@
 
 https://github.com/zurda/Github-Info
 
+getinfo.js
+
 ```
 class GetInfo extends React.Component {
   constructor(props) {
