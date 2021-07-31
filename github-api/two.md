@@ -69,3 +69,38 @@ const UserPage = props => {
     // eslint-disable-next-line
   }, []);
   ```
+-----
+
+```
+const ReposPage = () => {
+  const githubState = useContext(GithubContext);
+  const { repos } = githubState;
+
+  return (
+    <Fragment>
+      {repos.map(repo => (
+        <ReposComp key={repo.id} repo={repo} />
+      ))}
+    </Fragment>
+  );
+};
+
+export default ReposPage;
+```
+
+```
+const ReposComp = props => {
+  const {
+    name,
+    html_url,
+    description,
+    stargazers_count,
+    watchers_count,
+    forks_count,
+    language,
+    updated_at,
+    license
+  } = props.repo;
+
+  const uDate = updated_at.split("-");
+  ```
